@@ -1,53 +1,451 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru"><head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta property="og:title" content="I’m Punk. ">
-    <meta property="og:description" content="I am Self-taught Developer and Open Source Hunter.">
-    <title>Hi. I’m Punk.</title>
-    <link rel="stylesheet" href="Punk1.css" media="screen">
-<link rel="stylesheet" href="Punk.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="PunkJs.js" defer=""></script>
-    <link rel="icon" href="images/favicon.png">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
     
+    <!-- SEO METADATA -->
+    <title>Hi. I’m ArtworkPunk. </title>
+    <meta name="description" content="I am Self-taught Developer and Open Source Hunter.">
+    <meta name="author" content="ArtworkPunk">
+    <link rel="icon" type="image/png" href="white.png">
     
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Site1"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:type" content="website">
-  </head>
-  <body data-home-page="Punk.html" data-home-page-title="Punk" class="u-body u-xl-mode" data-lang="ru">
-    <section class="u-clearfix u-uploaded-video u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-video u-section-1" id="sec-7106">
-      <div class="u-background-video u-expanded" style="">
-        <div class="embed-responsive">
-          <video class="embed-responsive-item" data-autoplay="1" loop="1" muted="1" autoplay="autoplay" playsinline="">
-            <source src="files/back.mp4" type="video/mp4">
-            <p>Your browser does not support HTML5 video.</p>
-          </video>
-        </div>
-      </div>
-      <div class="u-clearfix u-sheet u-valign-top-md u-valign-top-sm u-sheet-1">
-        <img class="u-expanded-width-xs u-image u-image-default u-image-1" src="images/v1.png" alt="" data-image-width="826" data-image-height="967" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="">
-        <h1 class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-title u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000">Hi. I’m Punk.</h1>
-        <h1 class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000"> I am ​Self-taught Developer<br>and Open Source Hunter.
-        </h1>
-        <div class="u-align-center u-border-5 u-border-white u-line u-line-horizontal u-line-1"></div>
-        <a href="https://github.com/ArtworkPunk" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-oswald u-hover-custom-color-2 u-radius-5 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1000" target="_blank">GITHUB<br>
-        </a>
-        <a href="https://steamcommunity.com/id/svgg/" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-oswald u-hover-custom-color-2 u-radius-5 u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1250" target="_blank">STEAM<br>
-        </a>
-        <a href="https://discord.gg/3B4qBz7XbF" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-oswald u-hover-custom-color-2 u-radius-5 u-btn-3" data-animation-name="customAnimationIn" data-animation-duration="1500" target="_blank">DISCORD</a>
-      </div>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 
-      <audio autoplay="True" loop="True">
-        <source src="files/sound.mp3" type="audio/mpeg">
-      </audio>
-</body></html>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #ff0000;
+            --ui-faded: rgba(0,0,0,0.08);
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-head: 'Syncopate', sans-serif;
+        }
+
+        body.hacked {
+            --bg: #000000;
+            --text: #ff0000;
+            --ui-faded: rgba(255,0,0,0.2);
+            overflow: hidden !important;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: var(--font-mono); 
+            overflow-x: hidden;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        section { 
+            min-height: 100vh; 
+            scroll-snap-align: start; 
+            padding: 140px 10%; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* --- PRELOADER --- */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #fff; z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .preloader-content { width: 400px; padding: 20px; text-align: center; }
+        .bar-container { width: 100%; height: 1px; background: #eee; margin: 15px 0; overflow: hidden; }
+        .bar-fill { width: 0%; height: 100%; background: #000; }
+        
+        #init-btn { 
+            opacity: 0; transform: translateY(20px);
+            margin: 20px auto 0; padding: 10px 30px; 
+            background: none; border: 1px solid #000; 
+            font-family: var(--font-mono); cursor: pointer;
+            text-transform: uppercase; letter-spacing: 2px;
+            display: none;
+        }
+
+        /* --- NEURAL LINK (FIXED) --- */
+        #neural-link {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 9000;
+            display: none; /* Исправлено: Скрыто по умолчанию */
+            opacity: 0;
+            flex-direction: column; justify-content: center; align-items: center;
+            color: #fff; pointer-events: none;
+        }
+
+        /* --- BACKGROUND --- */
+        #bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            display: grid; grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(20, 1fr); z-index: -2; pointer-events: none;
+        }
+        .grid-pixel { border: 0.5px solid var(--ui-faded); background: transparent; }
+
+        /* --- HEADER & GLITCH --- */
+        header {
+            position: fixed; top: 0; width: 100%; padding: 40px 60px;
+            display: flex; justify-content: space-between; z-index: 1000;
+            background: rgba(255,255,255,0.01); backdrop-filter: blur(5px);
+        }
+        .header-logo:hover .glitch-active { animation: glitch 0.3s infinite; }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        .scanner-wrap { width: 100%; height: 1px; background: var(--ui-faded); margin: 40px 0; position: relative; overflow: hidden; }
+        .scanner-line { position: absolute; width: 200px; height: 100%; background: var(--text); box-shadow: 0 0 15px var(--text); }
+
+        /* --- DATABASE CARDS --- */
+        .db-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2px; background: var(--text); border: 1px solid var(--text);
+        }
+        .db-card {
+            background: var(--bg); padding: 30px; text-decoration: none; color: var(--text);
+            height: 280px; display: grid; grid-template-columns: 1fr 50px;
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .db-card:hover { background: var(--text); color: var(--bg); }
+        .card-content { display: flex; flex-direction: column; justify-content: space-between; }
+        .card-logs { font-size: 7px; opacity: 0.4; line-height: 1.2; text-align: right; overflow: hidden; }
+        .card-icon { font-size: 20px; margin-bottom: 10px; opacity: 0.8; }
+
+        /* --- BREACH --- */
+        .breach-matrix { display: grid; grid-template-columns: repeat(5, 50px); gap: 10px; margin: 30px 0; }
+        .matrix-cell {
+            width: 50px; height: 50px; border: 1px solid var(--text);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 14px; transition: 0.2s;
+        }
+        .matrix-cell.active { background: var(--text); color: var(--bg); border-color: var(--accent); }
+
+        #hack-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 9999; display: none;
+            color: #ff0000; padding: 50px; font-size: 10px; overflow-y: auto;
+        }
+
+        /* Текстовый пульс */
+        .system-alive { animation: textPulse 4s infinite ease-in-out; }
+        @keyframes textPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+        #author-sig { opacity: 0; position: absolute; pointer-events: none; }
+    </style>
+</head>
+<body onload="window.scrollTo(0, 0);">
+
+    <div id="author-sig">Developed by ArtworkPunk</div>
+
+    <audio id="bg-music" loop><source src="background-music.mp3" type="audio/mpeg"></audio>
+    <audio id="ui-click"><source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg"></audio>
+    <audio id="alarm-sound"><source src="alarm.mp3" type="audio/mpeg"></audio>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div id="p-title" style="font-size: 10px; letter-spacing: 5px; font-family: var(--font-head);">---</div>
+            <div class="bar-container"><div class="bar-fill" id="p-bar"></div></div>
+            <div id="p-msg" style="font-size: 9px; opacity: 0.5;">MOUNTING DRIVES...</div>
+            <button id="init-btn">INITIALIZE SYSTEM</button>
+        </div>
+    </div>
+
+    <!-- NEURAL LINK -->
+    <div id="neural-link">
+        <h2 id="link-status">ESTABLISHING NEURAL LINK...</h2>
+        <div style="width: 200px; height: 1px; background: rgba(255,255,255,0.2); margin-top: 20px;">
+            <div id="link-progress" style="width: 0%; height: 100%; background: #fff;"></div>
+        </div>
+    </div>
+
+    <div id="hack-overlay"></div>
+    <div id="bg-grid"></div>
+
+    <header>
+        <div class="header-logo glitch-wrapper">
+            <div style="font-family: var(--font-head); font-weight: 700; letter-spacing: 3px;" class="glitch-active system-alive">ARTWORKPUNK</div>
+            <div style="font-size: 9px; margin-top: 5px; letter-spacing: 2px; color: var(--accent);">NEVER FADE AWAY!</div>
+        </div>
+        <div style="font-size: 9px; text-align: right;">
+            SYSTEM_PROTOCOL: ACTIVE<br>
+            <span id="date">--.--.--</span> | <span id="time">00:00:00</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div style="font-size: 10px; margin-bottom: 20px;">[ AUTHORIZED_ACCESS_ONLY ]</div>
+            <h1 id="hero-title" class="system-alive" style="font-family: var(--font-head); font-size: clamp(2.5rem, 8vw, 7rem);">CREATIVE<br>SOLUTION</h1>
+            <div class="scanner-wrap"><div class="scanner-line"></div></div>
+            <div style="max-width: 800px;">
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                    Passionate about <span style="font-weight: 700;">Design</span>, 
+                    <span style="font-weight: 700;">Programming</span>, and 
+                    <span style="font-weight: 700;">Gaming Architecture</span>.
+                </p>
+                <p style="opacity: 0.5; font-size: 0.9rem; line-height: 1.8;">
+                    Translating aesthetic chaos into clean code. 
+                    <br>Someday the machines will destroy us. 
+                    <br>High-tech, low-life, all code.
+                </p>
+            </div>
+        </section>
+
+        <section id="database">
+            <div style="font-family: var(--font-head); font-size: 10px; margin-bottom: 30px;">DATABASE_MODULES</div>
+            <div class="db-grid">
+                <!-- CARD 1 -->
+                <a href="#" class="link-trigger db-card" data-url="https://github.com/ArtworkPunk">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x01</span>
+                            <h3>GITHUB CORE</h3>
+                        </div>
+                        <p style="font-size: 10px;">[REPOSITORIES]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+                <!-- CARD 2 -->
+                <a href="#" class="link-trigger db-card" data-url="https://www.youtube.com/@ArtworkPunk">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fab fa-youtube"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x02</span>
+                            <h3>YOUTUBE</h3>
+                        </div>
+                        <p style="font-size: 10px;">[PRODUCTION]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+                <!-- CARD 3 -->
+                <a href="#" class="link-trigger db-card" data-url="https://www.twitch.tv/artworkpunk">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fab fa-twitch"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x03</span>
+                            <h3>TWITCH</h3>
+                        </div>
+                        <p style="font-size: 10px;">[BROADCAST]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+                <!-- CARD 4 -->
+                <a href="#" class="link-trigger db-card" data-url="https://steamcommunity.com/id/svgg/">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fab fa-steam"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x04</span>
+                            <h3>STEAM</h3>
+                        </div>
+                        <p style="font-size: 10px;">[GAMING_ID]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+                <!-- CARD 5 -->
+                <a href="#" class="link-trigger db-card" data-url="https://vscode.dev">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x05</span>
+                            <h3>VS CODE</h3>
+                        </div>
+                        <p style="font-size: 10px;">[WORK_ENV]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+                <!-- CARD 6 -->
+                <a href="#" class="link-trigger db-card" data-url="https://artworkpunk.github.io/Zapret-Toolkit/">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <span style="font-size: 9px;">0x06</span>
+                            <h3>ZAPRET</h3>
+                        </div>
+                        <p style="font-size: 10px;">[BYPASS_TOOL]</p>
+                    </div>
+                    <div class="card-logs"></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="breach">
+            <div class="system-alive" style="font-family: var(--font-head); font-size: 10px;">BREACH_PROTOCOL_v4.0</div>
+            <div style="margin-top: 20px; font-size: 12px;">UPLOAD SEQUENCE: <span style="color: var(--accent); font-weight: bold;">BD 55 E9</span></div>
+            <div class="breach-matrix" id="matrix"></div>
+            <div id="breach-status" style="margin-top: 30px; font-size: 10px; opacity: 0.5;">WAITING FOR INPUT...</div>
+        </section>
+    </main>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+        const music = document.getElementById('bg-music');
+        const clickSfx = document.getElementById('ui-click');
+        const alarmSfx = document.getElementById('alarm-sound');
+        music.volume = 0.2;
+
+        // --- 1. SECURITY CHECK ---
+        !function(){
+            const sig = "\x44\x65\x76\x65\x6C\x6F\x70\x65\x64\x20\x62\x79\x20\x41\x72\x74\x77\x6F\x72\x6B\x50\x75\x6E\x6B";
+            setInterval(() => {
+                const el = document.getElementById('author-sig');
+                if (!el || !el.innerText.includes(sig)) {
+                    document.body.innerHTML = '<div style="background:#000;color:red;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:monospace;"><h1>SYSTEM_LOCKED</h1><p>AUTHOR_CREDITS_REMOVED</p></div>';
+                }
+            }, 1000);
+        }();
+
+        // --- 2. HACKER PRELOADER ---
+        const preTl = gsap.timeline();
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        
+        function scramble(id, final) {
+            let el = document.getElementById(id);
+            let count = 0;
+            let interval = setInterval(() => {
+                el.innerText = final.split('').map((c, i) => i < count ? c : chars[Math.floor(Math.random() * chars.length)]).join('');
+                if (count >= final.length) clearInterval(interval);
+                count += 0.5;
+            }, 50);
+        }
+
+        preTl.to("#p-bar", { 
+            width: "100%", duration: 3, ease: "power4.inOut",
+            onStart: () => scramble("p-title", "ARTWORKPUNK.OS v.2.0"),
+            onUpdate: function() { document.getElementById('p-msg').innerText = `DECRYPTING_SECTORS... ${Math.round(this.progress()*100)}%`; }
+        });
+        preTl.to("#init-btn", { display: "block", opacity: 1, y: 0, duration: 1, ease: "back.out(1.7)" });
+
+        document.getElementById('init-btn').onclick = () => {
+            music.play();
+            gsap.to("#preloader", { opacity: 0, duration: 1, onComplete: () => document.getElementById('preloader').style.display='none' });
+        };
+
+        // --- 3. ADVANCED BACKGROUND ---
+        const bgGrid = document.getElementById('bg-grid');
+        for(let i=0; i<400; i++) bgGrid.appendChild(document.createElement('div')).className = 'grid-pixel';
+
+        function bgAnimate() {
+            let tl = anime.timeline({ easing: 'easeInOutQuad', complete: bgAnimate });
+            tl.add({ targets: '.grid-pixel', opacity: [0.1, 0.4], delay: anime.stagger(20, {grid: [20, 20], from: 'center'}), duration: 800 })
+              .add({ targets: '.grid-pixel', translateX: () => anime.random(-40, 40), translateY: () => anime.random(-40, 40), opacity: [0.4, 0.1], delay: anime.stagger(10), duration: 1500 })
+              .add({ targets: '.grid-pixel', translateX: 0, translateY: 0, opacity: 0.2, duration: 1000 });
+        }
+        bgAnimate();
+
+        anime({ targets: '.scanner-line', translateX: ['-100%', '1200%'], duration: 3000, loop: true, easing: 'linear' });
+
+        // --- 4. VERTICAL LOGS ---
+        document.querySelectorAll('.db-card').forEach(card => {
+            const logs = card.querySelector('.card-logs');
+            setInterval(() => {
+                const div = document.createElement('div');
+                div.innerText = `0x${Math.random().toString(16).slice(2,6).toUpperCase()}`;
+                logs.prepend(div);
+                if (logs.childNodes.length > 8) logs.removeChild(logs.lastChild);
+            }, 1000 + Math.random() * 1000);
+        });
+
+        // --- 5. NEURAL LINK (FIXED) ---
+        const triggers = document.querySelectorAll('.link-trigger');
+        const overlay = document.getElementById('neural-link');
+
+        triggers.forEach(t => {
+            t.addEventListener('click', (e) => {
+                e.preventDefault();
+                clickSfx.play();
+                const url = t.getAttribute('data-url');
+                
+                // Исправлено: Сначала показываем, потом анимируем
+                gsap.set(overlay, { display: 'flex', opacity: 0 });
+                gsap.set("#link-progress", { width: "0%" });
+
+                const linkTl = gsap.timeline({
+                    onComplete: () => {
+                        window.open(url, '_blank');
+                        setTimeout(() => {
+                            gsap.to(overlay, { opacity: 0, duration: 0.5, onComplete: () => {
+                                gsap.set(overlay, { display: 'none' });
+                            }});
+                        }, 1000);
+                    }
+                });
+
+                linkTl.to(overlay, { opacity: 1, duration: 0.4, pointerEvents: "all" })
+                      .to("#link-status", { text: "SYNCING_NEURAL_LINK...", duration: 1 })
+                      .to("#link-progress", { width: "100%", duration: 1.5, ease: "power2.in" })
+                      .to(overlay, { background: "#fff", duration: 0.1, repeat: 3, yoyo: true });
+            });
+        });
+
+        // --- 6. BREACH ---
+        const sequence = ["BD", "55", "E9"];
+        let userSeq = [];
+        const hex = ["BD", "55", "E9", "1C", "7A", "E9", "BD", "55", "FF", "00", "1C", "55", "BD", "E9", "7A", "BD", "55", "1C", "E9", "FF", "BD", "BD", "55", "E9", "7A"];
+
+        hex.forEach(code => {
+            const cell = document.createElement('div');
+            cell.className = 'matrix-cell';
+            cell.innerText = code;
+            cell.onclick = () => {
+                clickSfx.currentTime = 0; clickSfx.play();
+                cell.classList.add('active');
+                userSeq.push(code);
+                if (userSeq.join('').includes(sequence.join(''))) triggerHack();
+                else if (userSeq.length >= 5) {
+                    userSeq = [];
+                    document.querySelectorAll('.matrix-cell').forEach(c => c.classList.remove('active'));
+                }
+            };
+            document.getElementById('matrix').appendChild(cell);
+        });
+
+        function triggerHack() {
+            gsap.to(music, { volume: 0, duration: 1 });
+            alarmSfx.play();
+            document.body.classList.add('hacked');
+            const hackDiv = document.getElementById('hack-overlay');
+            hackDiv.style.display = 'block';
+            let count = 0;
+            const int = setInterval(() => {
+                const p = document.createElement('p');
+                p.innerText = `[CRITICAL] UPLOADING_CONSCIOUSNESS_${Math.random().toString(16).toUpperCase()}...`;
+                hackDiv.appendChild(p);
+                hackDiv.scrollTop = hackDiv.scrollHeight;
+                if(count++ > 100) {
+                    clearInterval(int);
+                    hackDiv.innerHTML = "<h1 style='font-size: 4vw; text-align: center; margin-top: 20%;'>YOU ARE HACKED</h1><p style='text-align:center;'>DATA SYNCED TO ARASAKA NETWORK.</p>";
+                    setTimeout(() => location.reload(), 3600);
+                }
+            }, 50);
+        }
+
+        setInterval(() => {
+            const n = new Date();
+            document.getElementById('time').innerText = n.toLocaleTimeString();
+            document.getElementById('date').innerText = n.toLocaleDateString();
+        }, 1000);
+    </script>
+</body>
+</html>
